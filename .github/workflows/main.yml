@@ -19,6 +19,12 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+        
+      - name: Check Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1
+        
       - name: Gradle cache
         uses: gradle/gradle-build-action@v2
         
